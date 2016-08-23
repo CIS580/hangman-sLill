@@ -64,7 +64,6 @@ function guessLetter(elm) {
       if (secretWord[i].toUpperCase() == letter) {
 		  blanks = blanks.substr(0,i) + letter + blanks.substr(i+1);
           _guessed = true;
-		   //drawBlanks();
       }
   }
 
@@ -79,10 +78,14 @@ function guessLetter(elm) {
   
   if(_wrongGuesses >= 6)
   {
+      lettersDiv.innerHTML = "";
+      guessesDiv.innerHTML = "";
 	  blanks = blanks + "\t You lose";
   }
   if (blanks.toUpperCase() == secretWord.toUpperCase())
   {
+      lettersDiv.innerHTML = "";
+      guessesDiv.innerHTML = "";
 	  blanks = blanks + "\t You win!";
   }
   drawBlanks();
